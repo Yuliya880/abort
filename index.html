@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Клиника "Меди-О" - Прерывание беременности</title>
     <style>
         * {
@@ -10,94 +10,104 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
+            -webkit-text-size-adjust: 100%;
         }
         
         body {
             line-height: 1.6;
             color: #333;
             background-color: #f9f9f9;
+            overflow-x: hidden;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
+            width: 100%;
         }
         
         header {
             background-color: #1d918d;
             color: white;
-            padding: 20px 0;
+            padding: 15px 0;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
         }
         
         .logo {
-            font-size: 28px;
+            font-size: clamp(20px, 5vw, 28px);
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         
         .tagline {
             font-style: italic;
             opacity: 0.9;
+            font-size: clamp(14px, 3vw, 16px);
         }
         
         .main-content {
-            padding: 40px 0;
+            padding: 30px 0;
             background-color: white;
+            min-height: calc(100vh - 200px);
         }
         
         h1, h2, h3 {
             color: #2980b9;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            word-wrap: break-word;
         }
         
         h1 {
-            font-size: 32px;
+            font-size: clamp(24px, 6vw, 32px);
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         
         h2 {
-            font-size: 26px;
+            font-size: clamp(20px, 5vw, 26px);
             border-bottom: 2px solid #e6f2fa;
-            padding-bottom: 10px;
-            margin-top: 30px;
+            padding-bottom: 8px;
+            margin-top: 25px;
         }
         
         h3 {
-            font-size: 22px;
-            margin-top: 25px;
+            font-size: clamp(18px, 4vw, 22px);
+            margin-top: 20px;
             color: #3498db;
         }
         
         p {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: #555;
+            font-size: clamp(14px, 3.5vw, 16px);
         }
         
         ul {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             padding-left: 20px;
         }
         
         li {
             margin-bottom: 8px;
             color: #555;
+            font-size: clamp(14px, 3.5vw, 16px);
         }
         
         .services {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
-            margin: 30px 0;
+            gap: 15px;
+            margin: 25px 0;
         }
         
         .service-card {
             flex: 1 1 300px;
+            min-width: 280px;
             background-color: #d5f3ef;
-            padding: 20px;
+            padding: 15px;
             border-radius: 5px;
             border-left: 4px solid #3498db;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -105,54 +115,117 @@
         
         .advantages {
             background-color: #d5f3ef;
-            padding: 30px;
+            padding: 20px;
             border-radius: 5px;
-            margin: 30px 0;
+            margin: 25px 0;
         }
         
         .notice {
             background-color: #d5f3ef;
-            padding: 20px;
+            padding: 15px;
             border-left: 4px solid #3498db;
-            margin: 30px 0;
+            margin: 25px 0;
             font-style: italic;
         }
         
         .contacts {
             background-color: #d5f3ef;
-            padding: 30px;
+            padding: 20px;
             border-radius: 5px;
-            margin-top: 40px;
+            margin-top: 35px;
             border: 1px solid #d4e6f7;
         }
         
         .contact-item {
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
         }
         
         .contact-icon {
             margin-right: 10px;
-            font-size: 20px;
+            font-size: 18px;
             color: #3498db;
+            min-width: 25px;
         }
         
         footer {
             background-color: #1d918d;
             color: white;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
+            padding: 15px 0;
+            margin-top: 30px;
+            font-size: clamp(12px, 3vw, 14px);
         }
         
         strong {
             color: #2980b9;
         }
         
+        /* Мобильные стили */
         @media (max-width: 768px) {
             .services {
                 flex-direction: column;
+                gap: 10px;
+            }
+            
+            .service-card {
+                flex: 1 1 auto;
+                width: 100%;
+            }
+            
+            header {
+                padding: 12px 0;
+            }
+            
+            .main-content {
+                padding: 20px 0;
+            }
+            
+            h1 {
+                margin-bottom: 20px;
+            }
+            
+            h2 {
+                margin-top: 20px;
+            }
+            
+            .advantages, .contacts {
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            .logo {
+                margin-bottom: 5px;
+            }
+            
+            h1 {
+                margin-bottom: 15px;
+            }
+            
+            .service-card, .advantages, .notice, .contacts {
+                padding: 12px;
+            }
+            
+            ul {
+                padding-left: 18px;
+            }
+            
+            .contact-item {
+                font-size: 14px;
+            }
+        }
+        
+        /* Планшеты */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .service-card {
+                flex: 1 1 45%;
             }
         }
     </style>
